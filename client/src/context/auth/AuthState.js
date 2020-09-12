@@ -23,7 +23,11 @@ const AuthState = props => {
     error: null
   };
   const [state, dispatch] = useReducer(AuthReducer, initialState);
-  const url = 'http://localhost:5000';
+  if (process.env.NODE_ENV === 'production') {
+    const url = 'http://contact-keeper-app-2020';
+  } else {
+    const url = 'http://localhost:5000';
+  }
 
   // Load User
   const loadUser = async () => {
