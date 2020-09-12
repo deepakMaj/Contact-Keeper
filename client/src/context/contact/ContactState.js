@@ -23,10 +23,7 @@ const ContactState = props => {
     error: null
   };
   const [state, dispatch] = useReducer(ContactReducer, initialState);
-  const url = 'http://localhost:5000';
-  if (process.env.NODE_ENV === 'production') {
-    url = 'http://contact-keeper-app-2020';
-  }
+  const url = 'http://contact-keeper-app-2020';
 
   // Get contact
   const getContact = async () => {
